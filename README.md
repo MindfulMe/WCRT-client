@@ -11,3 +11,5 @@
 ### License
 
 - See [LICENSE](/LICENSE)
+
+### Your firebase configs should be placed to android and ios folders accordingly (google-services.json & GoogleService-Info.plist)
