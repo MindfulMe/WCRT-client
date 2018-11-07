@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import firebase from 'react-native-firebase';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import ModalPickerImage from './ModalPickerImage';
+import ModalPickerImage from '../components/ModalPickerImage';
 import { HomeHeader } from '../components/HomeHeader';
 import { Footer } from '../components/Footer';
 import { HomeCarousel } from '../components/HomeCarousel';
-
+import LoginScreen from './LoginScreen';
 EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
   $primaryOrange: '#D57A66',
@@ -204,29 +204,28 @@ export default class Home extends React.Component {
   render() {
     const { user, confirmResult } = this.state;
     return (
-        <View style={styles.container}>
-      {!user && !confirmResult && this.renderPhoneNumberInput()}
+      <View style={styles.container}>
+        {!user && !confirmResult && <LoginScreen />/*this.renderPhoneNumberInput() */}
 
-      {this.renderMessage()}
-
-      {!user && confirmResult && this.renderVerificationCodeInput()}
-      {user && (
-        <View style={styles.container2}>
-          
-          <ImageBackground
-            source={require('../images/backgrounds.jpg')}
-            resizeMode="cover"
-            style={{ width: '100%', height: '100%' }}
-          >
-            <StatusBar translucent={false} barStyle="light-content" />
-            <HomeHeader onPress={this.handleOptionsPress} titleText="Internet Banking" />
-            <HomeCarousel />
-            <Footer onPress={this.handleAccountsPress} />
-            <Button title="Sign Out" color="red" onPress={this.signOut} />
-          </ImageBackground>
-        </View>
-      )}
-    </View>
+        {this.renderMessage}
+        {!user && confirmResult && this.renderVerificationCodeInput()}
+        {user && (
+          <View style={styles.container2}>
+            
+            <ImageBackground
+              source={require('../images/backgrounds.jpg')}
+              resizeMode="cover"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <StatusBar translucent={false} barStyle="light-content" />
+              <HomeHeader onPress={this.handleOptionsPress} titleText="Internet Banking" />
+              <HomeCarousel />
+              <Footer onPress={this.handleAccountsPress} />
+              <Button title="Sign Out" color="red" onPress={this.signOut} />
+            </ImageBackground>
+          </View>
+        )}
+      </View>
     );
   }
 }

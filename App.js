@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './componets/Main';
+import Main from './src/Main';
 
 export default class App extends React.Component {
 
