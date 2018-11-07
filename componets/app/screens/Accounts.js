@@ -14,9 +14,11 @@ const styles = StyleSheet.create({
 });
 
 export default class Accounts extends Component {
+
   static propTypes = {
     navigation: PropTypes.object,
   };
+  
   handleClosePress = () => {
     this.props.navigation.goBack(null);
   };
@@ -28,6 +30,7 @@ export default class Accounts extends Component {
       type: 'account1',
     });
   };
+  
   render() {
     return (
       <View style={styles.container}>
