@@ -11,10 +11,10 @@
     "replace-in-file": "^3.4.0"
   },
   "scripts": {
+    "start": "react-native run-ios",
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
     "rename": "node ./bin/rename.js",
-    "start": "react-native start",
+    "bundler": "react-native start",
     "test": "jest"
   },
   "jest": {

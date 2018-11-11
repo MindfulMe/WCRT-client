@@ -9,7 +9,10 @@ import ModalPickerImage from '../components/ModalPickerImage';
 import { HomeHeader } from '../components/HomeHeader';
 import { Footer } from '../components/Footer';
 import { HomeCarousel } from '../components/HomeCarousel';
-import LoginScreen from './LoginScreen';
+
+import Logo from '../components/Login/Logo';
+import Wallpaper from '../components/Login/Wallpaper';
+
 EStyleSheet.build({
   $primaryBlue: '#4F6D7A',
   $primaryOrange: '#D57A66',
@@ -28,7 +31,6 @@ export default class Home extends React.Component {
     super(props);
     this.unsubscribe = null;
     this.updateInfo = this.updateInfo.bind(this);
-    this.renderInfo = this.renderInfo.bind(this);
     this.onPressFlag = this.onPressFlag.bind(this);
     this.selectCountry = this.selectCountry.bind(this);
 
@@ -76,6 +78,12 @@ export default class Home extends React.Component {
      if (this.unsubscribe) this.unsubscribe();
   }
 
+  componentDidUpdate() {
+    if(this.state.valid) {
+      this.signIn()
+      this.state.valid = false;
+    }
+  }
 
   onPressFlag() {
     this.myCountryPicker.open();
@@ -117,59 +125,35 @@ export default class Home extends React.Component {
     firebase.auth().signOut();
   }
 
-  renderInfo() {
-    if (this.state.value) {
-      return (
-        <View style={styles.info}>
-          <Text>
-            Is Valid:{" "}
-            <Text style={{ fontWeight: "bold" }}>
-              {this.state.valid.toString()}
-            </Text>
-          </Text>
-          <Text>
-            Type: <Text style={{ fontWeight: "bold" }}>{this.state.type}</Text>
-          </Text>
-          <Text>
-            Value:{" "}
-            <Text style={{ fontWeight: "bold" }}>{this.state.value}</Text>
-          </Text>
-        </View>
-      );
-    }
-  }
-
   renderPhoneNumberInput() {
 
     return (
-      <View style={styles.container}>
-      <PhoneInput
-        textProps={{autoFocus: true, placeholder: 'Phone number...'}}
-        initialCountry="ua"
-        ref={(ref) => {
-          this.phone = ref;
-        }}
-        onPressFlag={this.onPressFlag}
-      />
-
-      <ModalPickerImage
-        ref={(ref) => {
-          this.myCountryPicker = ref;
-        }}
-        data={this.state.pickerData}
-        onChange={(country) => {
-          this.selectCountry(country);
-        }}
-        cancelText="Cancel"
-      />
+      <Wallpaper>
+        <Logo />
       
-      <TouchableOpacity onPress={this.updateInfo} style={styles.button}>
-        <Text>Get Info</Text>
-      </TouchableOpacity>
-      <Button title="Sign In" color="green" onPress={this.signIn} />
-      {this.renderInfo()}
+        <View style={styles.container}>
+        <PhoneInput
+          textProps={{autoFocus: true, placeholder: 'Phone number...'}}
+          initialCountry="ua"
+          ref={(ref) => {
+            this.phone = ref;
+          }}
+          onPressFlag={this.onPressFlag}
+          onChangePhoneNumber={this.updateInfo}
+        />
 
-    </View>
+        <ModalPickerImage
+          ref={(ref) => {
+            this.myCountryPicker = ref;
+          }}
+          data={this.state.pickerData}
+          onChange={(country) => {
+            this.selectCountry(country);
+          }}
+          cancelText="Cancel"
+        />
+      </View>
+    </Wallpaper>
     );
   }
 
@@ -203,9 +187,10 @@ export default class Home extends React.Component {
 
   render() {
     const { user, confirmResult } = this.state;
+
     return (
       <View style={styles.container}>
-        {!user && !confirmResult && <LoginScreen /> /*this.renderPhoneNumberInput() */}
+        {!user && !confirmResult && this.renderPhoneNumberInput() }
 
         {this.renderMessage}
         {!user && confirmResult && this.renderVerificationCodeInput()}
