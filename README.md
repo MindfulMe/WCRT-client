@@ -1,4 +1,5 @@
 ***AVOBAND***
+<img src="https://github.com/favicon.ico" height="24">
 [![INSERT YOUR GRAPHIC HERE](https://i.imgur.com/Yh3QkWz.png)]()
 [![INSERT YOUR GRAPHIC HERE](https://i.imgur.com/Yh3QkWz.png)]()
 [![INSERT YOUR GRAPHIC HERE](https://i.imgur.com/W3ATiMB.png)]()
