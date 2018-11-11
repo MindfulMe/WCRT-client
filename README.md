@@ -3,7 +3,7 @@
 
 <div style="display:flex">
   <img src="https://i.imgur.com/Yh3QkWz.png" height="430">
-  <img src="https://i.imgur.com/Yh3QkWz.png" height="430">
+  <img src="https://i.imgur.com/Aw8VnOc.png" height="430">
   <img src="https://i.imgur.com/W3ATiMB.png" height="430">
   <img src="https://i.imgur.com/mC3Z9Fh.png" height="430">
 </div>
