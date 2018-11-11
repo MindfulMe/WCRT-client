@@ -8,7 +8,7 @@
   <img src="https://i.imgur.com/mC3Z9Fh.png" height="425">
 </div>
 
-*** Description ***
+
 
 
 > Subtitle or Short Description Goes Here
