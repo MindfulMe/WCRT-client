@@ -4,6 +4,7 @@ import PhoneInput from 'react-native-phone-input';
 import PropTypes from 'prop-types';
 import firebase from 'react-native-firebase';
 import EStyleSheet from 'react-native-extended-stylesheet';
+import Dimensions from 'Dimensions';
 
 import ModalPickerImage from '../components/ModalPickerImage';
 import { HomeHeader } from '../components/HomeHeader';
@@ -130,9 +131,8 @@ export default class Home extends React.Component {
     return (
       <Wallpaper>
         <Logo />
-      
-        <View style={styles.container}>
         <PhoneInput
+        style={styles.input}
           textProps={{autoFocus: true, placeholder: 'Phone number...'}}
           initialCountry="ua"
           ref={(ref) => {
@@ -152,7 +152,6 @@ export default class Home extends React.Component {
           }}
           cancelText="Cancel"
         />
-      </View>
     </Wallpaper>
     );
   }
@@ -215,6 +214,10 @@ export default class Home extends React.Component {
   }
 }
 
+const DEVICE_WIDTH = Dimensions.get('window').width;
+const DEVICE_HEIGHT = Dimensions.get('window').height;
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -255,5 +258,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 4,
     textAlign: 'center',
-  }
+  },
+  input: {
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    width: DEVICE_WIDTH - 40,
+    height: 40,
+    marginHorizontal: 20,
+    paddingLeft: 45,
+    borderRadius: 20,
+    color: '#ffffff',
+  },
 });
