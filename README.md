@@ -180,8 +180,8 @@ $ bower install
 
 Reach out to me at one of the following places!
 
-- Website at <a href="http://fvcproductions.com" target="_blank">`fvcproductions.com`</a>
-- Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
+- Website at <a href="https://avowe.us" target="_blank">`AVOWE.US`</a>
+- Twitter at <a href="http://twitter.com/" target="_blank">`twitter`</a>
 - Insert more social links here.
 
 ---
@@ -200,4 +200,4 @@ Reach out to me at one of the following places!
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2015 © <a href="http://fvcproductions.com" target="_blank">FVCproductions</a>.
+- Copyright 2018 © AVOBANK LLC.
