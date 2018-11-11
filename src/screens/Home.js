@@ -205,7 +205,7 @@ export default class Home extends React.Component {
     const { user, confirmResult } = this.state;
     return (
       <View style={styles.container}>
-        {!user && !confirmResult && <LoginScreen />/*this.renderPhoneNumberInput() */}
+        {!user && !confirmResult && <LoginScreen /> /*this.renderPhoneNumberInput() */}
 
         {this.renderMessage}
         {!user && confirmResult && this.renderVerificationCodeInput()}
