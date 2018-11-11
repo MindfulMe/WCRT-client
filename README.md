@@ -1,8 +1,11 @@
 ***AVOBANK***
-<img src="https://i.imgur.com/Yh3QkWz.png" height="24">
-<img src="https://i.imgur.com/Yh3QkWz.png" height="24">
-<img src="https://i.imgur.com/W3ATiMB.png" height="24">
-<img src="https://i.imgur.com/mC3Z9Fh.png" height="24">
+
+
+
+<img src="https://i.imgur.com/Yh3QkWz.png" height="240">
+<img src="https://i.imgur.com/Yh3QkWz.png" height="240">
+<img src="https://i.imgur.com/W3ATiMB.png" height="240">
+<img src="https://i.imgur.com/mC3Z9Fh.png" height="240">
 
 
 # Repository Title Goes Here
