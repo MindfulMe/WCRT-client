@@ -148,8 +148,8 @@ $ npm install
 ## Team
 
 > Contributors/People
-<img src="https://avatars3.githubusercontent.com/u/26275425?s=460&v=4" style="border-radius: 30px" height=200 />
-<a href="https://github.com/MindfulMe" target="_blank">github.com/mindfulme</a>
+<img src="https://avatars3.githubusercontent.com/u/26275425?s=460&v=4" height=150 />
+<a href="https://github.com/MindfulMe" target="_blank">MindfulMe</a>
 
 
 ---
