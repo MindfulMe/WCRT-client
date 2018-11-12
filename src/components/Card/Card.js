@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Switch } from "react-native";
 import { CreditCardInput, LiteCreditCardInput } from "react-native-credit-card-input";
+import Wallpaper from '../Login/Wallpaper';
 
 const s = StyleSheet.create({
     switch: {
@@ -32,41 +33,43 @@ export default class Card extends Component {
 
   render() {
     return (
-      <View style={s.container}>
-        <Switch
-          style={s.switch}
-          onValueChange={this._setUseLiteCreditCardInput}
-          value={this.state.useLiteCreditCardInput} />
+      <Wallpaper>
+        <View style={s.container}>
+          <Switch
+            style={s.switch}
+            onValueChange={this._setUseLiteCreditCardInput}
+            value={this.state.useLiteCreditCardInput} />
 
-        { this.state.useLiteCreditCardInput ?
-          (
-            <LiteCreditCardInput
-              autoFocus
-              inputStyle={s.input}
+          { this.state.useLiteCreditCardInput ?
+            (
+              <LiteCreditCardInput
+                autoFocus
+                inputStyle={s.input}
 
-              validColor={"black"}
-              invalidColor={"red"}
-              placeholderColor={"darkgray"}
+                validColor={"black"}
+                invalidColor={"red"}
+                placeholderColor={"darkgray"}
 
-              onFocus={this._onFocus}
-              onChange={this._onChange} />
-          ) : (
-            <CreditCardInput
-              autoFocus={true}
-              requiresName
-              requiresCVC
-              cardScale={1.2}
-              labelStyle={s.label}
-              inputStyle={s.input}
-              validColor={"black"}
-              invalidColor={"red"}
-              placeholderColor={"darkgray"}
+                onFocus={this._onFocus}
+                onChange={this._onChange} />
+            ) : (
+              <CreditCardInput
+                autoFocus={true}
+                requiresName
+                requiresCVC
+                cardScale={1.2}
+                labelStyle={s.label}
+                inputStyle={s.input}
+                validColor={"black"}
+                invalidColor={"red"}
+                placeholderColor={"darkgray"}
 
-              onFocus={this._onFocus}
-              onChange={this._onChange} />
-          )
-        }
-      </View>
+                onFocus={this._onFocus}
+                onChange={this._onChange} />
+            )
+          }
+        </View>
+      </Wallpaper>
     );
   }
 }

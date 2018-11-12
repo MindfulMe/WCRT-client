@@ -170,6 +170,7 @@ export default class Home extends React.Component {
     const { codeInput } = this.state;
 
     return (
+      <Wallpaper>
       <View style={{ marginTop: 25, padding: 25 }}>
         <Text>Enter verification code below:</Text>
         <TextInput
@@ -181,6 +182,7 @@ export default class Home extends React.Component {
         />
         <Button title="Confirm Code" color="#841584" onPress={this.confirmCode} />
       </View>
+      </Wallpaper>
     );
   }
 
@@ -195,18 +197,13 @@ export default class Home extends React.Component {
         {!user && confirmResult && this.renderVerificationCodeInput()}
         {user && (
           <View style={styles.container2}>
-            
-            <ImageBackground
-              source={require('../images/backgrounds.jpg')}
-              resizeMode="cover"
-              style={{ width: '100%', height: '100%' }}
-            >
+            <Wallpaper>
               <StatusBar translucent={false} barStyle="light-content" />
               <HomeHeader onPress={this.handleOptionsPress} titleText="Internet Banking" />
               <HomeCarousel />
               <Footer onPress={this.handleAccountsPress} />
               <Button title="Sign Out" color="red" onPress={this.signOut} />
-            </ImageBackground>
+            </Wallpaper>
           </View>
         )}
       </View>
