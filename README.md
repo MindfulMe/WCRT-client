@@ -147,11 +147,9 @@ $ npm install
 
 ## Team
 
-> Or Contributors/People
+> Contributors/People
 
-| <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> | <a href="http://fvcproductions.com" target="_blank">**FVCproductions**</a> |
-| :---: |:---:| :---:| | [![FVCproductions](https://avatars3.githubusercontent.com/u/26275425?s=460&v=4)](http://github.com/mindfulme)  |
-| <a href="http://github.com/mindfulme" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/mindfulme" target="_blank">`github.com/fvcproductions`</a> | <a href="http://github.com/mindfulme" target="_blank">`github.com/fvcproductions`</a> |
+<img src="https://avatars3.githubusercontent.com/u/26275425?s=460&v=4" height=200 />
 
 ---
 
