@@ -27,6 +27,7 @@
     "cross-fetch": "^2.2.3",
     "expo": "^30.0.1",
     "fbjs": "^0.8.17",
+    "mastercard-crossborder": "^1.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.3.2",
     "react-native": "^0.55.3",
