@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, StatusBar, SectionList } from 'react-native';
 import Wallpaper from '../components/Login/Wallpaper';
 import staticData from '../data/transactions';
+import { Card } from '../components/Card';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,6 +26,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: 'rgb(222,222,222)',
   },
+  card: {
+    marginBottom: '30px'
+  }
 });
 
 export default class Home extends Component {
@@ -38,8 +42,10 @@ export default class Home extends Component {
   render() {
     return (
       <Wallpaper>
+        
         <View style={styles.container}>
           <StatusBar barStyle="dark-content" />
+          <Card style={styles.card}/>
           <SectionList
             renderItem={({ item, index }) => (
               <View key={index} style={styles.listItem}>

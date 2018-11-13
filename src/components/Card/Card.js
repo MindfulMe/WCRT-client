@@ -8,10 +8,11 @@ const s = StyleSheet.create({
       alignSelf: "center",
       marginTop: 20,
       marginBottom: 20,
+      marginLeft: 40
     },
     container: {
-      backgroundColor: "#F5F5F5",
-      marginTop: 60,
+      marginTop: 0,
+      marginLeft:-40,
     },
     label: {
       color: "black",
@@ -19,7 +20,6 @@ const s = StyleSheet.create({
     },
     input: {
       fontSize: 16,
-      color: "black",
     },
   });
   
@@ -33,7 +33,6 @@ export default class Card extends Component {
 
   render() {
     return (
-      <Wallpaper>
         <View style={s.container}>
           <Switch
             style={s.switch}
@@ -42,16 +41,7 @@ export default class Card extends Component {
 
           { this.state.useLiteCreditCardInput ?
             (
-              <LiteCreditCardInput
-                autoFocus
-                inputStyle={s.input}
-
-                validColor={"black"}
-                invalidColor={"red"}
-                placeholderColor={"darkgray"}
-
-                onFocus={this._onFocus}
-                onChange={this._onChange} />
+            <View />
             ) : (
               <CreditCardInput
                 autoFocus={true}
@@ -69,7 +59,6 @@ export default class Card extends Component {
             )
           }
         </View>
-      </Wallpaper>
     );
   }
 }
