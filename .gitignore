@@ -65,3 +65,7 @@ buck-out/
 /ios/Pods/
 # google-services.json
 # GoogleService-Info.plist
+
+third-party/
+ios/
+android/

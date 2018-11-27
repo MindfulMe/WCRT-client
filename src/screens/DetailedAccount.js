@@ -5,6 +5,7 @@ import Wallpaper from '../components/Login/Wallpaper';
 import staticData from '../data/transactions';
 import { Card } from '../components/Card';
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
