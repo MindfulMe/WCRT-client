@@ -2,6 +2,11 @@
 The future of the food delivery
 
 [Preview #1](https://docs.google.com/presentation/d/1hRwawHN8A6VDQUVH0uVgipO5mVasYSunLG_KuOt_kys/edit?usp=sharing)
+
+
+
+
+
 [Preview #2](https://docs.google.com/presentation/d/1rkJuCE8KUp1ymyWDC9jHJ9Hn7eD3O_suimm9H1VwElY/edit?usp=sharing)
 <div style="display:flex">
   <img src="https://i.imgur.com/Yh3QkWz.png" height="425">
