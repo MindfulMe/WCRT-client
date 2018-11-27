@@ -1,5 +1,5 @@
-# West coast roadtrip (food-delivery project)
-
+# WEST COAST ROAD TRIP
+Food-delivery project
 
 <div style="display:flex">
   <img src="https://i.imgur.com/Yh3QkWz.png" height="425">
