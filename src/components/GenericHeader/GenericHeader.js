@@ -5,9 +5,10 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 import styles from './styles';
 
-const GenericHeader = ({ onPress, titleText }) => (
+
+const GenericHeader = ({ onPress, onPressBag, titleText }) => (
   <View style={styles.container}>
-    <TouchableOpacity style={styles.button} onPress={onPress}>
+    <TouchableOpacity style={styles.button} onPress={onPressBag}>
       <Image resizeMode="contain" style={styles.icon} source={require('../../images/menu.png')} />
     </TouchableOpacity>
     <Text style={styles.text}>{titleText}</Text>

@@ -1,12 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, ImageBackground, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, StatusBar } from 'react-native';
 import PhoneInput from 'react-native-phone-input';
 import PropTypes from 'prop-types';
 import firebase from 'react-native-firebase';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import Dimensions from 'Dimensions';
 
-import ModalPickerImage from '../components/ModalPickerImage';
 import { HomeHeader } from '../components/HomeHeader';
 import { Footer } from '../components/Footer';
 import { HomeCarousel } from '../components/HomeCarousel';
@@ -32,9 +31,6 @@ export default class Home extends React.Component {
     super(props);
     this.unsubscribe = null;
     this.updateInfo = this.updateInfo.bind(this);
-    this.onPressFlag = this.onPressFlag.bind(this);
-    this.selectCountry = this.selectCountry.bind(this);
-
     this.state = {
       user: null,
       message: '',
@@ -55,10 +51,30 @@ export default class Home extends React.Component {
     this.props.navigation.navigate('Accounts', { title: 'Accounts' });
   };
 
+  handlePayPress = () => {
+    this.props.navigation.navigate('Pay', { title: 'Pay' });
+  };
+
+  handleGlancePress = () => {
+    this.props.navigation.navigate('Glance', { title: 'Glance' });
+  };
+
+  handleMapsPress = () => {
+    this.props.navigation.navigate('RealMap', { title: 'Map' });
+  };
+
+  handleOrdersPress = () => {
+    this.props.navigation.navigate('OrdersBag', {
+      title: 'Orders Total',
+      type: 'orders',
+    });
+  };
+
   componentDidMount() {
     this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.setState({ pickerData: this.phone.getPickerData(), user: user.toJSON() });
+        if (this.phone)
+          this.setState({ pickerData: this.phone.getPickerData(), user: user.toJSON() });
       } else {
         // User has been signed out, reset the state
         this.setState({
@@ -73,6 +89,7 @@ export default class Home extends React.Component {
         });
       }
     });
+    console.disableYellowBox = true;
   }
 
   componentWillUnmount() {
@@ -84,14 +101,6 @@ export default class Home extends React.Component {
       this.signIn()
       this.state.valid = false;
     }
-  }
-
-  onPressFlag() {
-    this.myCountryPicker.open();
-  }
-
-  selectCountry(country) {
-    this.phone.selectCountry(country.iso2);
   }
 
   updateInfo() {
@@ -122,12 +131,7 @@ export default class Home extends React.Component {
     }
   };
 
-  signOut = () => {
-    firebase.auth().signOut();
-  }
-
   renderPhoneNumberInput() {
-
     return (
       <Wallpaper>
         <Logo />
@@ -138,19 +142,7 @@ export default class Home extends React.Component {
           ref={(ref) => {
             this.phone = ref;
           }}
-          onPressFlag={this.onPressFlag}
           onChangePhoneNumber={this.updateInfo}
-        />
-
-        <ModalPickerImage
-          ref={(ref) => {
-            this.myCountryPicker = ref;
-          }}
-          data={this.state.pickerData}
-          onChange={(country) => {
-            this.selectCountry(country);
-          }}
-          cancelText="Cancel"
         />
     </Wallpaper>
     );
@@ -199,10 +191,9 @@ export default class Home extends React.Component {
           <View style={styles.container2}>
             <Wallpaper>
               <StatusBar translucent={false} barStyle="light-content" />
-              <HomeHeader onPress={this.handleOptionsPress} titleText="Internet Banking" />
+              <HomeHeader onPress={this.handleOptionsPress} onPressBag={this.handleOrdersPress} titleText="Delivery" />
               <HomeCarousel />
-              <Footer onPress={this.handleAccountsPress} />
-              <Button title="Sign Out" color="red" onPress={this.signOut} />
+              <Footer onPress1={this.handleAccountsPress} onPress2={this.handlePayPress} onPress3={this.handleGlancePress} onPress4={this.handleMapsPress} />
             </Wallpaper>
           </View>
         )}
@@ -233,28 +224,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginTop: 32,
     width: 120,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  modules: {
-    margin: 20,
-  },
-  modulesHeader: {
-    fontSize: 16,
-    marginBottom: 8,
-  },
-  module: {
-    fontSize: 14,
-    marginTop: 4,
-    textAlign: 'center',
   },
   input: {
     backgroundColor: 'rgba(255, 255, 255, 0.4)',

@@ -12,7 +12,7 @@ const s = StyleSheet.create({
     },
     container: {
       marginTop: 0,
-      marginLeft:-40,
+      marginLeft:0,
     },
     label: {
       color: "black",
